@@ -1,5 +1,3 @@
-require 'board'
-
 class Player
 	attr_reader :name, :symbol
 
@@ -8,13 +6,8 @@ class Player
 		@symbol = symbol
 	end
 
-	def make_move?(position, board)
-        if board.move_valid?(position)
-            board.update(position, symbol)
-            return true
-        else
-            return false
-        end
+	def move_valid?(position)
+        ("1".."9").include? position
     end
     
     def to_s

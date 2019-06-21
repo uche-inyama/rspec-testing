@@ -29,7 +29,7 @@ describe Board do
             board.update("9", "O")
             expect(board.pos).to eql ["1", "2", "3", "4", "5", "6", "7", "8", "O"]
         end
-        it "changes doesn't change anything when asked to chage 10 to X" do
+        it "doesn't change anything when asked to chage 10 to X" do
             board = Board.new
             board.update("10", "X")
             expect(board.pos).to eql ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
