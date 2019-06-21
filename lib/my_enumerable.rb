@@ -167,3 +167,4 @@ p ary.my_count { |x| x%2 == 0 } #=> 3 (there are 3 even numbers in the array)
 # end
 # puts multiply_els([2, 4, 5])
 # puts multiply_els([3, 12, -2, 5])
+
