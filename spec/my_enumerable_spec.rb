@@ -6,13 +6,23 @@ RSpec.describe Enumerable do
 		it "return the elements in an array" do
 			arr = [1,2,3,5]
 			expect(arr.my_each {|x| x+2} ).to eql(0...4)
+		end	
+
+		it "return the elements in an array" do
+			arr = [1,2,3]
+			expect(arr.my_each {|x| x+2} ).to eql(0...3)
 		end
 	end
 
 	describe "#my_select" do 
-		it "return the elements in the array that true" do
+		it "return the elements in the array that even" do
 			arr = [1,2,3,6]
 			expect(arr.my_select {|x| x.even?}).to eql([2, 6])
+		end	
+
+		it "return the elements in the array that are even" do
+			arr = [1,2,3,6,9]
+			expect(arr.my_select {|x| x.odd?}).to eql([1,3,9])
 		end
 	end
 
@@ -73,6 +83,11 @@ RSpec.describe Enumerable do
 		it "return a new array with multiples of 3" do
 			arr = [1,1,3,6]
 			expect(arr.my_map {|x| x*3}).to eql([3,3,9,18])
+		end
+
+		it "return a new array with multiples of 3" do
+			arr = [1,1,3,6]
+			expect(arr.my_map {|x| x*x}).to eql([1,1,9,36])
 		end
 	end
 
